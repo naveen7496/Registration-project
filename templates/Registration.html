@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="#">
+</head>
+<body>
+
+
+        <div id="registration" class="container">
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Username:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="username" placeholder="Enter a Username"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> First Name:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="fname" placeholder="Enter Your First Name"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Age:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="age" placeholder="Enter Your Age"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Location:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="location" placeholder="Enter Your Location"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Last Name:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="lname" placeholder="Enter Your Last Name"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Email:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="email" placeholder="Enter Your Email ID"><br>
+                </div>
+            </div>
+            <br>
+            <p> The password must have minimum of 9 and maximum of 12 Characters</p>
+            <p> The password must have atleast one number</p>
+            <p> The password must have atleast on smallcase letter</p>
+            <p> The password must have atleast one uppercase letter</p>
+            <p> The password must have atleast on special character</p>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Password:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" name="password1" placeholder="Enter Your Password"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Password:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" name="password2" placeholder="Re-Enter Your Name"><br>
+                </div>
+            </div>
+            <br>
+            <div class="sbutton">
+                <input type="submit" value="Submit">
+            </div>
+
+            {% include 'message.html' %}
+
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+
+
+        </form>
+    </div>
+</body>
+</html>

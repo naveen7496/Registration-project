@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="#">
+</head>
+<body>
+    <div id="registration" class="container">
+        <form method="POST" action="{% url 'signin' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Username:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="username" placeholder="Enter Username"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> Password:</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" name="password" placeholder="Enter Password"><br>
+                </div>
+            </div>
+            <div class="sbutton">
+                <input type="submit" value="Login">
+            </div>
+
+            {% include 'message.html' %}
+
+            <script src="{% static 'js/jquery.js' %}"></script>
+            <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+
+        </form>
+    </div>
+</body>
+</html>
